@@ -34,10 +34,35 @@ export let Doctor = {
     });
 
   },
+//Drop Down
+  // apiRequestForSpecialitys: function(speciality, dropDown){
+  //   $.ajax({
+  //     url: 'https://api.betterdoctor.com/2016-03-01/specialties?limit=100&user_key='+ apiKey,
+  //     type: 'GET',
+  //     data: {
+  //       format: 'json'
+  //     },
+  //     success: (response) => {
+  //       console.log(response)
+  //       this.saveSpecialityToArray(response)
+  //       // dropDown(response, speciality)
+  //
+  //     },
+  //     error: function(){
+  //       $("#output").text("There has been an error");
+  //     }
+  //
+  //   })
+  // },
 
     saveDoctorsToArray: function(response, displayDoctors){
       let doctors = [];
+      let patients = "no";
+
       response.data.forEach(function(doctor){
+        if (doctor.practices[0].accepts_new_patients === true){
+          patients = "Yes";
+        }
         doctors.push(
           {
             first_name: doctor.profile.first_name,
@@ -48,12 +73,24 @@ export let Doctor = {
             streetAddress: doctor.practices[0].visit_address.street,
             zip: doctor.practices[0].visit_address.zip,
             phone: doctor.practices[0].phones[0].number,
-            newPatients: doctor.practices[0].accepts_new_patients,
+            newPatients: patients,
             photo: doctor.profile.image_url
         })
       })
       displayDoctors(doctors)
-    }
+    },
+//Drop Down
+    // saveSpecialityToArray: function(response, dropDown){
+    //   let speciality = [];
+    //   response.data.forEach(function(doctorSpeciality){
+    //     speciality.push(
+    //       {
+    //         speciality: doctorSpeciality.data[0].name
+    //       })
+    //   })
+    //   console.log(speciality)
+    //   dropDown(speciality);
+    // }
 
 
 

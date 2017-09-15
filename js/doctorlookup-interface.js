@@ -3,12 +3,22 @@ var apiKey = require('./../.env').apiKey;
 import { Doctor } from './../js/doctorlookup.js';
 
 $(function(){
+  //Drop Down
+  // Doctor.apiRequestForSpecialitys();
+  //
+  // function dropDown(speciality){
+  //   speciality.forEach(speciality, function(list){
+  //     $("#dropDown").append($('<option></option>').val(speciality[list]));
+  //   })
+  // };
+
   $("#doctorForm").submit(function(e){
     e.preventDefault();
     let problem = $("#problem").val();
     let doctorName = $("#doctorName").val();
 
     Doctor.apiRequestForDoctors(problem, displayDoctors);
+
 
     function displayDoctors(doctors){
       if(doctors.length === 0){
