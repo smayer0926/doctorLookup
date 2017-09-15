@@ -2,25 +2,16 @@ let apiKey = require('./../.env').apiKey;
 
 export let Doctor = {
 
-  // apiRequestPromise: function(medicalIssue, displayDoctors){
-  //   return new Promise(function(resolve, reject){
-  //     let request = new XMLHttpRequest();
-  //     let url = 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=15&user_key=' + apiKey;
-  //     request.onload = function(){
-  //       if (this.status === 200){
-  //         resolve(request.response);
-  //         // console.log(displayDoctors(request.response));
-  //       } else{
-  //         reject(Error(request.statusText));
-  //       }
-  //     }
-  //     request.open("GET", url, true);
-  //     request.send();
-  //   }).then(this.saveDoctorsToArray)
-  // },
-  apiRequestForDoctors: function(medicalIssue, displayDoctors){
+  apiRequestForDoctors: function( medicalIssue, displayDoctors){
+    // let thisurl = 0;
+    // if(doctorName === true ){
+    //   let thisurl = 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=2&user_key=' + apiKey;
+    // } else{
+    //   let thisurl = 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey;
+    // }
+    // console.log(thisurl);
     $.ajax({
-      url: 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=15&user_key=' + apiKey,
+      url: 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey,
       type: 'GET',
       data: {
         format: 'json'
@@ -34,7 +25,23 @@ export let Doctor = {
     });
   },
 
+  apiRequestBasedOnDoctorsName: function(doctorName, displayDoctors){
+  console.log(doctorName);
+    $.ajax({
+      url: 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: (response) => {
+        this.saveDoctorsToArray(response, displayDoctors);
+      },
+      error: function(){
+        $("#output").text("There has been an error");
+      }
+    });
 
+  },
 
     saveDoctorsToArray: function(response, displayDoctors){
       let doctors = [];
@@ -44,12 +51,17 @@ export let Doctor = {
             first_name: doctor.profile.first_name,
             last_name: doctor.profile.last_name,
             title: doctor.profile.title,
-            gender: doctor.profile.gender,
-            languagesKnown: doctor.profile.languages[0].name,
-            bio: doctor.profile.bio
+            city: doctor.practices[0].visit_address.city,
+            state: doctor.practices[0].visit_address.state,
+            streetAddress: doctor.practices[0].visit_address.street,
+            zip: doctor.practices[0].visit_address.zip,
+            phone: doctor.practices[0].phones[0].number,
+            newPatients: doctor.practices[0].accepts_new_patients,
+            photo: doctor.profile.image_url
         })
       })
-      console.log(doctors)
+        console.log(doctors)
+
       displayDoctors(doctors)
     }
 

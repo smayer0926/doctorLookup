@@ -5,22 +5,44 @@
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+    <link href="css/styles.css" rel="stylesheet"  type="text/css">
     <title>Doctor Finder</title>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Find a Doctor for your problem here!</h1>
+        <h1>Doctor Finder</h1>
+        <h4>Find the perfect doctor for you based on where your pain is or by the name of a doctor</h4>
       </div>
-      <form id="doctorForm">
-        <div class="form-group">
-          <label for="problem">What is the symptom you are experiencing?</label>
-          <input id = "problem" class="form-control" type= "text">
+      <div class="well">
+        <h3>Enter either a pain or the name of the physician you want to see</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <form id="doctorForm">
+              <div class="form-group">
+                <label for="problem">Where is the pain you feel?</label>
+                <input id = "problem" class="form-control" type= "text">
+              </div>
+              <button class="btn" type="submit">Find a doctor based on pain!</button>
+            </form>
+          </div>
+          <div class="col-md-6>">
+            <form id="doctorNameForm">
+              <div class="form-group">
+                <label for="doctorName">What is the name of the doctor you are looking for?</label>
+                <input id = "doctorName" class="form-control" type= "text">
+              </div>
+              <button class="btn" type="submit">Find my Doctor!</button>
+            </form>
+          </div>
         </div>
-        <button class="btn" type="submit">Submit</button>
-      </form>
-      <div id="output">
-        <ul></ul>
+        <div class="row">
+          <div class="col-md-4">
+            <div id="output">
+              <ul></ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -1,0 +1,29 @@
+.btn {
+  display: block;
+  margin: auto;
+  background: purple;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.jumbotron{
+  text-align: center;
+}
+.well{
+   background-color: rgba(255,255,255, 0.6)
+}
+#doctorForm{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+#doctorNameForm{
+  width: 50%;
+  float: left;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
