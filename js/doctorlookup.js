@@ -55,7 +55,6 @@ export let Doctor = {
     saveDoctorsToArray: function(response, displayDoctors){
       let doctors = [];
       let patients = "No";
-      let url = "";
 
       response.data.forEach(function(doctor){
         if (doctor.practices[0].accepts_new_patients === true){

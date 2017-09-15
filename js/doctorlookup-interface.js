@@ -29,7 +29,6 @@ $(function(){
          })
        }
      }
-
      $("input").val("");
      $("#output").empty();
      $("#noDoc").empty();
