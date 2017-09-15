@@ -3,15 +3,8 @@ let apiKey = require('./../.env').apiKey;
 export let Doctor = {
 
   apiRequestForDoctors: function( medicalIssue, displayDoctors){
-    // let thisurl = 0;
-    // if(doctorName === true ){
-    //   let thisurl = 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=2&user_key=' + apiKey;
-    // } else{
-    //   let thisurl = 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey;
-    // }
-    // console.log(thisurl);
     $.ajax({
-      url: 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey,
+      url: 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + medicalIssue +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=12&user_key=' + apiKey,
       type: 'GET',
       data: {
         format: 'json'
@@ -28,7 +21,7 @@ export let Doctor = {
   apiRequestBasedOnDoctorsName: function(doctorName, displayDoctors){
   console.log(doctorName);
     $.ajax({
-      url: 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=10&user_key=' + apiKey,
+      url: 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=12&user_key=' + apiKey,
       type: 'GET',
       data: {
         format: 'json'
@@ -60,15 +53,12 @@ export let Doctor = {
             photo: doctor.profile.image_url
         })
       })
+        console.log(doctors.newPatients)
         console.log(doctors)
 
       displayDoctors(doctors)
     }
 
-    // apiRequestPromise.then(function(response, displayDoctors){
-    //   const doctor = JSON.parse(response);
-    //   saveDoctorsToArray(doctor,displayDoctors)
-    // })
+
 
   }
-// }
