@@ -51,8 +51,8 @@ $ gulp serve
 
 | Behavior      | Example Input      | Example Output       |
 | ------------- | ------------- | ------------- |
-| Enter a symptom, get back a list of doctors | Heart Pain  | Peter Marsh, MD Address: 12100 SE Stevens Ct, Clackamas, OR 97086, Phone number: 503-331-6330, Accepting New Patients: Yes |
-| Enter a name of a Doctor, get back a list of doctors with that name | Peter | Peter Marsh, MD Address: 12100 SE Stevens Ct, Clackamas, OR 97086, Phone number: 503-331-6330, Accepting New Patients: Yes |
+| Enter a symptom, get back a list of doctors | Heart Pain  | John Doe, MD Address: 12100 SE Mystery Ct, Clackamas, OR 97086, Phone number: 555-331-555, Accepting New Patients: Yes |
+| Enter a name of a Doctor, get back a list of doctors with that name | Jane | Jane Doe, MD Address: 3181 SW Jackson Rd, Portland, OR 97239, Phone number: 555-809-5555, Accepting New Patients: Yes |
 
 ## Questions or Concerns ##
 _If there are any questions or concerns, please contact me at smayer0926@gmail.com_
