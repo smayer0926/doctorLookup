@@ -1,4 +1,4 @@
-# Super Galactic Age Calculator
+# The Doctor Lookup
 
 #### Epicodus JavaScript Week 2 Project, September 15, 2017
 
@@ -6,50 +6,66 @@
 
 ## Description
 
-_This application implements an API into it so that you can....._
+_This application implements an API into it so that you can look up a doctor based off name or based off a symptom that you may be having. The API that is used is provided by Better Doctor._
 
+_This is what the main page of the application looks like._
+![Image of Main page](images/screenshot.png)
+_This is what the results look like when you search by a condition._
+![Looking up results](images/screenshot2.png)
+_This is what the results look like when you search by a name._
+![Looking up results](images/screenshot1.png)
 
-![Image of Main page](images/)
-
-![Looking up planets](images/)
-
-![Checking out the different options](images/)
-
-![Ability to see seconds](images/)
 ## Setup/Installation Requirements
-For this set up, you will need to install Bower and NPM and make sure all their dependencies are correct.
-
-* Clone the repo from git hub.
-* Open in atom
+* Clone the repo from git hub using:
+````
+$ git clone https://github.com/smayer0926/doctorLookup.git
+````
+* Open the project in your favorite editor, this was created in Atom.
 * Experiment!
-* Make sure to rebuild the file after making any changes to the js files, using 'gulp build'.
-* Open in your favorite browser.
+
+_To use tis project you will need the following installed properly on your computer._
+* [Node.js](https://nodejs.org/en/)
+* Once installed, you will need to install gulp and bower:
+
+````
+$ npm install gulp
+$ npm install Bower
+````
+
+_You will need an API Key from [Better Doctor API](https://developer.betterdoctor.com/)_
+
+* Sign up for a free account, if you don't already have one.
+* Copy your API Key that is provided into a file that you create in the project called .env.
+* In this file write: exports.apiKey = "YOUR-API-KEY-GOES-HERE"; and save the file.
+* Make sure to rebuild the file after making any changes to the js files, using:
+````
+$ gulp build
+````
+ or by using:
+````
+$ gulp serve
+````
+* Open in your favorite browser, if you just use gulp build, otherwise it will be launched by gulp serve.
 
 ## Specifications
 
 | Behavior      | Example Input      | Example Output       |
 | ------------- | ------------- | ------------- |
-| Enter an age, return age in seconds | 1 year  | 31536000 seconds |
-| Enter an age, return age in Mercury Years| 0.24 years on Earth | 1 year on Mercury |
-| Enter an age, return age in Venus Years | 0.62 years on Earth | 1 year on Venus |
-| Enter an age, return age in Mars Years | 1.88 years on Earth | 1 year on Mars  |
-| Enter an age, return age in Jupiter Years | 11.86 years on Earth | 1 year on Jupiter  |
-| Enter a birthday, return the age that you are from different planets | 22 years on Earth | 260.92 years on Jupiter |
-| Compare the life expectancy of a person to the age they are, and the differences on other planets | America: 81 years, female, current age: 22 | Mars age: 41.36, 39.64 year left if you move to Mars |
+| Enter a symptom, get back a list of doctors | Heart Pain  | Peter Marsh, MD Address: 12100 SE Stevens Ct, Clackamas, OR 97086, Phone number: 503-331-6330, Accepting New Patients: Yes |
+| Enter a name of a Doctor, get back a list of doctors with that name | Peter | Peter Marsh, MD Address: 12100 SE Stevens Ct, Clackamas, OR 97086, Phone number: 503-331-6330, Accepting New Patients: Yes |
 
 ## Questions or Concerns ##
 _If there are any questions or concerns, please contact me at smayer0926@gmail.com_
 
 ## Known Bugs
-_No known bugs._
+_Some people will not have images that appear for them, for some reason the src input doesn't like to take in the file, even though there is a file for them._
 
 ## Technologies Used
 
 * _Atom_
 * _Gulp_
 * _Bower_
-* _Karma_
-* _Jasmine_
+* _Postman_
 
 
 ### License
