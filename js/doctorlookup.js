@@ -19,7 +19,6 @@ export let Doctor = {
   },
 
   apiRequestBasedOnDoctorsName: function(doctorName, displayDoctors){
-  console.log(doctorName);
     $.ajax({
       url: 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=12&user_key=' + apiKey,
       type: 'GET',
@@ -53,9 +52,6 @@ export let Doctor = {
             photo: doctor.profile.image_url
         })
       })
-        console.log(doctors.newPatients)
-        console.log(doctors)
-
       displayDoctors(doctors)
     }
 
