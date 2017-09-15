@@ -37,7 +37,7 @@ body {
   text-align: center;
   margin-top: 15px
 }
-h3{
+h3, h5{
   text-align: center;
 }
 #output {
@@ -70,4 +70,14 @@ img{
 }
 #newRowBorder{
   border-bottom: 5px solid white;
+}
+#dropDownButton{
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+#dropDownForm{
+  display: block;
+  margin: auto;
+  width: 40%;
 }

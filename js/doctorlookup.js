@@ -35,29 +35,27 @@ export let Doctor = {
 
   },
 //Drop Down
-  // apiRequestForSpecialitys: function(speciality, dropDown){
-  //   $.ajax({
-  //     url: 'https://api.betterdoctor.com/2016-03-01/specialties?limit=100&user_key='+ apiKey,
-  //     type: 'GET',
-  //     data: {
-  //       format: 'json'
-  //     },
-  //     success: (response) => {
-  //       console.log(response)
-  //       this.saveSpecialityToArray(response)
-  //       // dropDown(response, speciality)
-  //
-  //     },
-  //     error: function(){
-  //       $("#output").text("There has been an error");
-  //     }
-  //
-  //   })
-  // },
+  apiRequestForSpecialitys: function(newDropDown){
+    $.ajax({
+      url: 'https://api.betterdoctor.com/2016-03-01/specialties?limit=100&user_key='+ apiKey,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: (response) => {
+        this.saveSpecialityToArray(response, newDropDown)
+      },
+      error: function(){
+        $("#output").text("There has been an error");
+      }
+
+    })
+  },
 
     saveDoctorsToArray: function(response, displayDoctors){
       let doctors = [];
-      let patients = "no";
+      let patients = "No";
+      let url = "";
 
       response.data.forEach(function(doctor){
         if (doctor.practices[0].accepts_new_patients === true){
@@ -80,17 +78,21 @@ export let Doctor = {
       displayDoctors(doctors)
     },
 //Drop Down
-    // saveSpecialityToArray: function(response, dropDown){
-    //   let speciality = [];
-    //   response.data.forEach(function(doctorSpeciality){
-    //     speciality.push(
-    //       {
-    //         speciality: doctorSpeciality.data[0].name
-    //       })
-    //   })
-    //   console.log(speciality)
-    //   dropDown(speciality);
-    // }
+    saveSpecialityToArray: function(response, newDropDown){
+      let speciality = [];
+      response.data.forEach(function(doctorSpeciality){
+        speciality.push(
+          {
+            speciality: doctorSpeciality.name
+          })
+      })
+      let sorted = speciality.sort(function(a,b){
+        var textA = a.speciality.toUpperCase();
+        var textB = b.speciality.toUpperCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      });
+      newDropDown(sorted);
+    }
 
 
 
