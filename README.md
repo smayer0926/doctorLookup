@@ -8,11 +8,11 @@
 
 _This application implements an API into it so that you can look up a doctor based off name or based off a symptom that you may be having. The API that is used is provided by Better Doctor._
 
-## This is what the main page of the application looks like.
+## This is what the main page of the application looks like
 ![Image of Main page](images/screenshot.png)
-_This is what the results look like when you search by a condition._
+## This is what the results look like when you search by a condition
 ![Looking up results](images/screenshot2.png)
-_This is what the results look like when you search by a name._
+## This is what the results look like when you search by a name
 ![Looking up results](images/screenshot1.png)
 
 ## Setup/Installation Requirements
