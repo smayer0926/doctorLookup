@@ -10,11 +10,14 @@ _This application implements an API into it so that you can look up a doctor bas
 
 ## This is what the main page of the application looks like
 ![Image of Main page](images/screenshot.png)
-## This is what the results look like when you search by a condition
+## The results look like when you search by a condition
 ![Looking up results](images/screenshot2.png)
-## This is what the results look like when you search by a name
+## The results look like when you search by a name
 ![Looking up results](images/screenshot1.png)
-
+## The drop down menu includes 100 different specialties
+![Looking up results](images/screenshot3.png)
+## The results for the drop down will show you the doctors for that speciality
+![Looking up results](images/screenshot4.png)
 ## Setup/Installation Requirements
 * Clone the repo from git hub using:
 ````
