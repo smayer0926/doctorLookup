@@ -28,6 +28,7 @@ body {
   margin: auto;
   text-align: center;
   margin-top: 15px;
+  width: 40%;
 }
 #doctorNameForm{
   width: 50%;
@@ -80,4 +81,8 @@ img{
   display: block;
   margin: auto;
   width: 40%;
+}
+#problem{
+  display: block;
+  margin: auto
 }
