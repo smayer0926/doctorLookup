@@ -61,7 +61,7 @@ $ gulp serve
 _If there are any questions or concerns, please contact me at smayer0926@gmail.com_
 
 ## Known Bugs
-_Some people will not have images that appear for them, for some reason the src input doesn't like to take in the file, even though there is a file for them._
+_No known bugs at this time._
 
 ## Technologies Used
 
