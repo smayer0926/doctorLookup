@@ -18,22 +18,6 @@ export let Doctor = {
     });
   },
 
-  apiRequestBasedOnDoctorsName: function(doctorName, displayDoctors){
-    $.ajax({
-      url: 'https://api.betterdoctor.com/2016-03-01/doctors?name='+ doctorName +'&location=or-portland&user_location=45.512794%2C-122.679565&skip=0&limit=12&user_key=' + apiKey,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: (response) => {
-        this.saveDoctorsToArray(response, displayDoctors);
-      },
-      error: function(){
-        $("#output").text("There has been an error");
-      }
-    });
-
-  },
 //Drop Down
   apiRequestForSpecialitys: function(newDropDown){
     $.ajax({
