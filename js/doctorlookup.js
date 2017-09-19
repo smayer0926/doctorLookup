@@ -55,6 +55,7 @@ export let Doctor = {
     saveDoctorsToArray: function(response, displayDoctors){
       let doctors = [];
       let patients = "No";
+      let image = ""
 
       response.data.forEach(function(doctor){
         if (doctor.practices[0].accepts_new_patients === true){
@@ -92,7 +93,4 @@ export let Doctor = {
       });
       newDropDown(sorted);
     }
-
-
-
   }

@@ -6,6 +6,20 @@ $(function(){
 
   Doctor.apiRequestForSpecialitys(newDropDown);
 
+  function displayDoctors(doctors){
+    if(doctors.length === 0){
+      return $("#noDoc").append("There are no Doctors matching this search, please try again")
+    }
+    else{
+     doctors.forEach(function(doctorInfo){
+       $("#noDoc").empty();
+       console.log(doctorInfo.photo)
+        return $("#output").append("<div class='panel-panel'>" +  "<img src='" + doctorInfo.photo + "'</>" + "</br>"+ "<div class='panel-heading'>"+ '<h3>' + doctorInfo.first_name + " " + doctorInfo.last_name + ", " + doctorInfo.title + '</h3>' + "</div>" + "<br>" + "<div class='panel-body'>" + "Address: " + doctorInfo.streetAddress + ", "+ doctorInfo.city + ", " + doctorInfo.state + " " + doctorInfo.zip + "<br>" + "Phone Number: " + doctorInfo.phone + "<br>" + "Accepting New Patients: " + doctorInfo.newPatients + "</div>" + "</div>");
+       })
+
+     }
+   }
+
   function newDropDown(speciality){
     speciality.forEach(function(list){
       $("#dropDown").append('<option>' + list.speciality + '</option>');
@@ -16,19 +30,8 @@ $(function(){
     let dropDown = $("#dropDown").val();
 
     Doctor.apiRequestForDoctors(dropDown, displayDoctors);
+    this.displayDoctors();
 
-    function displayDoctors(doctors){
-      if(doctors.length === 0){
-        $("#noDoc").append("There are no Doctors matching this search, please try again")
-      }
-      else{
-       doctors.forEach(function(doctorInfo){
-         $("#noDoc").empty();
-         $("#output").append("<div class=panel-panel>" +  "<img src="+ doctorInfo.photo + "</>"+ "</br>"+ "<div class='panel-heading'"+ '<h3>' + doctorInfo.first_name + " " + doctorInfo.last_name + ", " + doctorInfo.title + '</h3>' + "</div>" + "<br>" + "<div class='panel-body'>" + "Address: " + doctorInfo.streetAddress + ", "+ doctorInfo.city + ", " + doctorInfo.state + " " + doctorInfo.zip + "<br>" + "Phone Number: " + doctorInfo.phone + "<br>" + "Accepting New Patients: " + doctorInfo.newPatients + "</div>" + "</div>");
-
-         })
-       }
-     }
      $("input").val("");
      $("#output").empty();
      $("#noDoc").empty();
@@ -41,19 +44,6 @@ $(function(){
 
     Doctor.apiRequestForDoctors(problem, displayDoctors);
 
-    function displayDoctors(doctors){
-      if(doctors.length === 0){
-        $("#noDoc").append("There are no Doctors matching this search, please try again")
-      }
-      else{
-       doctors.forEach(function(doctorInfo){
-         $("#noDoc").empty();
-         $("#output").append("<div class=panel-panel>" +  "<img src="+ doctorInfo.photo + "</>"+ "</br>"+ "<div class='panel-heading'"+ '<h3>' + doctorInfo.first_name + " " + doctorInfo.last_name + ", " + doctorInfo.title + '</h3>' + "</div>" + "<br>" + "<div class='panel-body'>" + "Address: " + doctorInfo.streetAddress + ", "+ doctorInfo.city + ", " + doctorInfo.state + " " + doctorInfo.zip + "<br>" + "Phone Number: " + doctorInfo.phone + "<br>" + "Accepting New Patients: " + doctorInfo.newPatients + "</div>" + "</div>");
-
-         })
-       }
-     }
-
      $("input").val("");
      $("#output").empty();
      $("#noDoc").empty();
@@ -62,19 +52,6 @@ $(function(){
     e.preventDefault();
     let doctorName = $("#doctorName").val();
     Doctor.apiRequestBasedOnDoctorsName(doctorName, displayDoctors)
-
-    function displayDoctors(doctors){
-      if(doctors.length === 0){
-        $("#noDoc").append("There are no Doctors matching this search, please try again")
-      }
-      else{
-       doctors.forEach(function(doctorInfo){
-         $("#noDoc").empty();
-         $("#output").append("<div class=panel-panel>" +  "<img src="+ doctorInfo.photo + "</>"+ "</br>"+ "<div class='panel-heading'"+ '<h3>' + doctorInfo.first_name + " " + doctorInfo.last_name + ", " + doctorInfo.title + '</h3>' + "</div>" + "<br>" + "<div class='panel-body'>" + "Address: " + doctorInfo.streetAddress + ", "+ doctorInfo.city + ", " + doctorInfo.state + " " + doctorInfo.zip + "<br>" + "Phone Number: " + doctorInfo.phone + "<br>" + "Accepting New Patients: " + doctorInfo.newPatients + "</div>" + "</div>");
-
-         })
-       }
-     }
 
      $("input").val("");
      $("#output").empty();
