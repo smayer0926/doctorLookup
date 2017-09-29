@@ -21,7 +21,7 @@ _This application implements an API into it so that you can look up a doctor bas
 
 ## View Of Application
 ### This is what the main page of the application looks like
-![Image of Main page](images/screenshot.png =250x250)
+![Image of Main page](images/screenshot.png | width=100)
 ### The results look like when you search by a condition
 ![Looking up results](images/screenshot2.png)
 ### The results look like when you search by a name
