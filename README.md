@@ -4,21 +4,35 @@
 
 #### By Stephanie Mayer
 
+## Table Of Contents
+
+* [Description](#description)
+* [View Of Application](#view-of-application)
+* [Set-Up Requirements](#setup-requirements)
+* [Specifications](#specifications)
+* [Questions or Concerns](#questions-or-concerns)
+* [Known Bugs](#known-bugs)
+* [Technologies Used](#technologies-used)
+
 ## Description
 
 _This application implements an API into it so that you can look up a doctor based off name or based off a symptom that you may be having. The API that is used is provided by Better Doctor._
 
-## This is what the main page of the application looks like
+
+## View Of Application
+### This is what the main page of the application looks like
 ![Image of Main page](images/screenshot.png)
-## The results look like when you search by a condition
+### The results look like when you search by a condition
 ![Looking up results](images/screenshot2.png)
-## The results look like when you search by a name
+### The results look like when you search by a name
 ![Looking up results](images/screenshot1.png)
-## The drop down menu includes 100 different specialties
+### The drop down menu includes 100 different specialties
 ![Looking up results](images/screenshot3.png)
-## The results for the drop down will show you the doctors for that speciality
+### The results for the drop down will show you the doctors for that speciality
 ![Looking up results](images/screenshot4.png)
-## Setup/Installation Requirements
+
+
+## Setup Requirements
 * Clone the repo from git hub using:
 ````
 $ git clone https://github.com/smayer0926/doctorLookup.git
